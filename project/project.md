@@ -1,6 +1,6 @@
 # Detecting Heart Disease using Machine Learning Classification Techniques
 
-- [ ] please follow oure template
+- [ ] please follow our template
 
 Ethan Nguyen
 
