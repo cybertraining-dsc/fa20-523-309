@@ -18,7 +18,7 @@ Contents
 
 Since cardiovascular diseases are the number 1 cause of death globally, early prevention could help in extending one’s life span and possibly quality of life. Since there are cases where patients do not show any signs of cardiovascular trouble until an event occurs, having an algorithm predict from their medical history would help in picking up on early warning signs a physician may overlook. Or could also reveal additional risk factors and patterns for research on prevention and treatment.
 
-This project will take a high-level overview of common, widely available classification algorithms and analyze their effectiveness for this specific use case. Notable ones include, Gaussian Naive Bayes, Logistic Regression, K-Nearest Neighbors, and Support Vector Machines.
+This project will take a high-level overview of common, widely available classification algorithms and analyze their effectiveness for this specific use case. Notable ones include, Gaussian Naive Bayes, K-Nearest Neighbors, and Support Vector Machines.
 
 Additionally, two data sets that contain common features will be used to increase the training and test pool for evaluation. As well as to explore if additional feature types contribute to a better prediction. As it is known that a large set of data is required to reduce the possibility of the algorithm’s overfitting.
 
@@ -77,6 +77,57 @@ To close out this initial analysis is the correlation map of each of the feature
 
 **Figure 2.6**: sav_set correlation matrix.
 
+## 3. Machine Learning Algorithms
+
+With many machine learning algorithms already available and many more in development. Selecting the optimal one for an application can be a challenging balance since each algorithm has both its advantages and disadvantages. As mentioned in the introduction, we will explore applying the most common and established algorithms available to the public. 
+
+Starting off, is selecting a library from the most popular ones available. Namely Keras, Pytorch, Tensorflow, and Scikit-Learn. Upon further investigation it was determined that Scikit-Learn would be used for this project. The reason being Scikit-Learn is a great general machine learning library that also includes pre and post processing functions. While Keras, Pytorch, and Tensorflow are targeted for neural networks and other higher-level deep learning algorithms which are outside of the scope of this project at this time [^3]. 
+
+### 3.1 Scikit-Learn and Algorithm Types
+Diving further into the Scikit-Learn library, its key strength appears to be the variety of algorithms available that are relatively easy to implement against a dataset. Of those available, they are classified under three different categories based on the approach each takes. They are as follows:
+
+- Classification
+    - Applied to problems that require identifying the category an object belongs to.
+- Regression
+    - For predicting or modeling continuous values.
+- Clustering
+    - Grouping similar objects into groups.
+
+For this project, we will be investigating the Classification and Clustering algorithms offered by the library due to the nature of our dataset. Since it is a binary answer, the continuous prediction capability of regression algorithms will not fair well. Compared to classification type algorithms which are well suited for determining binary and multi-class classification on datasets [^4]. Along with Clustering algorithms being capable of grouping unlabeled data which is one of the key problem points mentioned in the introduction [^5].
+
+### 3.2 Classification Algorithms
+The following algorithms were determined to be candidates for this project based on the documentation available on the Scikit-learn for supervised learning [^6]. 
+
+#### 3.2.1 Support Vector Machines
+This algorithm was chosen because classification is one of the target types and has a decent list of advantages that appear to be applicable to this dataset [^4]. 
+- Effective in high dimensional spaces as well as if the number dimensions out number samples.
+- Is very versatile.
+
+#### 3.2.2 K-Nearest Neighbors
+This algorithm was selected due to being a non-parametric method that has been successful in classification applications [^7]. From the dataset analysis, it is appears that the decision boundary may be very irregular which is a strong point of this type of method.
+
+#### 3.2.3 Gaussian Naive Bayes
+Is an implementation of the Naive Bayes theorem that has been targeted for classification. The advantages of this algorithm is its speed and requires a small training set compared to more advanced algorithms [^8].
+
+#### 3.2.4 Decision Trees
+This algorithm was chosen to investigate another non-parametric method to determine their efficacy against this dataset application. This algorithm also has some advantages over K-Nearest namely [^9]. 
+- Simple to interpret and visualize
+- Requires little data preparation 
+    - Handles numerical and categorical data instead of needing to normalize
+- Can validate the model and is possible to audit from a liability standpoint.
+
+### 3.3 Clustering Algorithms
+The following algorithms were determined to be candidates for this project based on the table of clustering algorithms available on the Scikit-learn [^10]. 
+
+#### 3.3.1 K-Means 
+The usecase for this algorithm is general purpose with even and low number of clusters [^10]. Of which the sav_set appears to have with the even distribution across most of the features.
+
+#### 3.3.2 Mean-shift
+This algorithm was chosen for its strength in dealing with uneven cluster sizes and non-flat geometry [^10]. Though it is not easily scalable the application of our small dataset size might be of interest.
+
+#### 3.3.3 Spectral Clustering
+As an inverse, this algorithm was chosen for its strength with fewer uneven clusters [^10]. In comparison to Mean-shift, this maybe the better algorithm for this application. 
+
 ## Project Timeline
 
 The following is a plan for the rest of the semester, using the due dates for Assignments 8-11 as milestone dates.
@@ -84,7 +135,9 @@ The following is a plan for the rest of the semester, using the due dates for As
 ### October 26
 
 - Explore options on normalizing or conversion of the features to connect between the datasets and determine if they are viable to add to the project.
+    - A large portion of time was dedicated to researching this point. Unfortunately, nothing of note was discovered to realize this aspect of the plan. 
 - Explore ML models and frameworks and determine viability for the project.
+    - Additional information on the algorithms selected. Mainly the underlying calculation, theory, and disadvantages to compensate for has been added to the Nov 2nd milestone date.
 - Update Report.
 
 ### November 2
@@ -109,3 +162,19 @@ The following is a plan for the rest of the semester, using the due dates for As
 [^1]: WebMD. 2020. Understanding Your Cholesterol Report. [online] Available at: <https://www.webmd.com/cholesterol-management/understanding-your-cholesterol-report> [Accessed 21 October 2020].  
 
 [^2]: R, V., 2020. Feature Selection — Correlation And P-Value. [online] Medium. Available at: <https://towardsdatascience.com/feature-selection-correlation-and-p-value-da8921bfb3cf> [Accessed 21 October 2020].
+
+[^3]: Stack Overflow. 2020. Differences In Scikit Learn, Keras, Or Pytorch. [online] Available at: <https://stackoverflow.com/questions/54527439/differences-in-scikit-learn-keras-or-pytorch> [Accessed 27 October 2020].
+
+[^4]: Scikit-learn.org. 2020. 1.4. Support Vector Machines — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/svm.html#classification> [Accessed 27 October 2020].
+
+[^5]: Scikit-learn.org. 2020. 2.3. Clustering — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/clustering.html#clustering> [Accessed 27 October 2020].
+
+[^6]: Scikit-learn.org. 2020. 1. Supervised Learning — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/supervised_learning.html#supervised-learning> [Accessed 27 October 2020].
+
+[^7]: Scikit-learn.org. 2020. 1.6. Nearest Neighbors — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/neighbors.html> [Accessed 27 October 2020].
+
+[^8]: Scikit-learn.org. 2020. 1.9. Naive Bayes — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/naive_bayes.html> [Accessed 27 October 2020].
+
+[^9]: Scikit-learn.org. 2020. 1.10. Decision Trees — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/tree.html> [Accessed 27 October 2020].
+
+[^10]: Scikit-learn.org. 2020. 2.3. Clustering — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/clustering.html#clustering> [Accessed 27 October 2020].
