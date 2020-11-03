@@ -145,6 +145,15 @@ The following is a plan for the rest of the semester, using the due dates for As
 - Commence build out of ML models.
     - Tuning of hyperparameters as necessary.
 - Update Report.
+- Milestone Update
+    - Delays were encountered due to external events.
+    - Underestimated the amount of time needed to building the ML models. 
+        - Task of adding additional information on algorithms selected has been pushed back further due to above.
+    - Initial implementations do not look very promising
+        - It is suspected that over fitting is occurring with the base line hyperparameters for the dav_set.
+        - Accuracy results for the sav_set are not as high as expected for the selected algorithms.
+        - Further investigation and experimentation is required to implement the clustering type algorithms. Suspect would need to look into dimensionality reduction in order to obtain better accuracy results.
+    - A general download function appears to not be possible. The website that hosts the datasets used requires an API key for script interactions that is unique to each user. 
 
 ### November 9
 
