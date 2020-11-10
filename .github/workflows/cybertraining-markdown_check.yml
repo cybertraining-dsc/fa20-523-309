@@ -17,4 +17,4 @@ jobs:
         architecture: 'x64' 
     # Run the check program
     - name: Run Check
-      run: python markdown-check.py
+      run: python markdown-check.py project/project.md
