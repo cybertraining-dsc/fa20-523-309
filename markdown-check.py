@@ -140,8 +140,8 @@ for line in content.splitlines():
             error(f"{counter}: html tag <{tag}> not allowed in project")
         if f"</{tag}>" in line:
             error(f"{counter}: html tag </{tag}> not allowed in project")
-    if "“" or "”" in line:
-        error(f"{counter}: illeagal quote use \" instead")
+    #if "“" or "”" in line:
+     #   error(f"{counter}: illeagal quote use \" instead")
 
 print()
 print ("Lines:", lines)

@@ -84,6 +84,7 @@ With many machine learning algorithms already available and many more in develop
 Starting off, is selecting a library from the most popular ones available. Namely Keras, Pytorch, Tensorflow, and Scikit-Learn. Upon further investigation it was determined that Scikit-Learn would be used for this project. The reason being Scikit-Learn is a great general machine learning library that also includes pre and post processing functions. While Keras, Pytorch, and Tensorflow are targeted for neural networks and other higher-level deep learning algorithms which are outside of the scope of this project at this time [^3]. 
 
 ### 3.1 Scikit-Learn and Algorithm Types
+
 Diving further into the Scikit-Learn library, its key strength appears to be the variety of algorithms available that are relatively easy to implement against a dataset. Of those available, they are classified under three different categories based on the approach each takes. They are as follows:
 
 - Classification
@@ -96,20 +97,25 @@ Diving further into the Scikit-Learn library, its key strength appears to be the
 For this project, we will be investigating the Classification and Clustering algorithms offered by the library due to the nature of our dataset. Since it is a binary answer, the continuous prediction capability of regression algorithms will not fair well. Compared to classification type algorithms which are well suited for determining binary and multi-class classification on datasets [^4]. Along with Clustering algorithms being capable of grouping unlabeled data which is one of the key problem points mentioned in the introduction [^5].
 
 ### 3.2 Classification Algorithms
+
 The following algorithms were determined to be candidates for this project based on the documentation available on the Scikit-learn for supervised learning [^6]. 
 
 #### 3.2.1 Support Vector Machines
+
 This algorithm was chosen because classification is one of the target types and has a decent list of advantages that appear to be applicable to this dataset [^4]. 
 - Effective in high dimensional spaces as well as if the number dimensions out number samples.
 - Is very versatile.
 
 #### 3.2.2 K-Nearest Neighbors
+
 This algorithm was selected due to being a non-parametric method that has been successful in classification applications [^7]. From the dataset analysis, it is appears that the decision boundary may be very irregular which is a strong point of this type of method.
 
 #### 3.2.3 Gaussian Naive Bayes
+
 Is an implementation of the Naive Bayes theorem that has been targeted for classification. The advantages of this algorithm is its speed and requires a small training set compared to more advanced algorithms [^8].
 
 #### 3.2.4 Decision Trees
+
 This algorithm was chosen to investigate another non-parametric method to determine their efficacy against this dataset application. This algorithm also has some advantages over K-Nearest namely [^9]. 
 - Simple to interpret and visualize
 - Requires little data preparation 
@@ -117,20 +123,25 @@ This algorithm was chosen to investigate another non-parametric method to determ
 - Can validate the model and is possible to audit from a liability standpoint.
 
 ### 3.3 Clustering Algorithms
+
 The following algorithms were determined to be candidates for this project based on the table of clustering algorithms available on the Scikit-learn [^10]. 
 
 #### 3.3.1 K-Means 
+
 The usecase for this algorithm is general purpose with even and low number of clusters [^10]. Of which the sav_set appears to have with the even distribution across most of the features.
 
 #### 3.3.2 Mean-shift
+
 This algorithm was chosen for its strength in dealing with uneven cluster sizes and non-flat geometry [^10]. Though it is not easily scalable the application of our small dataset size might be of interest.
 
 #### 3.3.3 Spectral Clustering
+
 As an inverse, this algorithm was chosen for its strength with fewer uneven clusters [^10]. In comparison to Mean-shift, this maybe the better algorithm for this application. 
 
 ## 4. Results & Discussion
 
 ### 4.1 Algorithm Metrics
+
 The metrics used to determine the viability of each of the algorithms are precision, recall, and f1-score. These are simple metrics based on the values from a confusion matrix which is a visualization of the False and True Positives and Negatives. Precision is essentially how accurate was the algorithm in classifying each data point. This however, is not a good metric to solely base performance as precision does not account for imbalanced distributions within a dataset [^11]. 
 
 This is where the recall metric comes in which is defined as how many samples were accurately classified by the algorithm. This is a more versatile metric as it can compensate for imbalanced datasets. While it may not be in our case as seen in the dataset analysis where we have a relatively balanced ratio. It still gives great insight on the performance for our application.
@@ -140,6 +151,7 @@ Finally is the f1-score which is the harmonic mean of the precision and recall m
 The metrics for each algorithm implementation is as follows.
 
 #### 4.1.1 Support Vector Machines
+
 **Table 4.1:** dav_set metrics
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
@@ -153,6 +165,7 @@ The metrics for each algorithm implementation is as follows.
 | Has Disease | 0.95      | 0.99   | 0.97     |
 
 #### 4.1.2 K-Nearest Neighbors
+
 **Table 4.3:** dav_set metrics
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
@@ -166,6 +179,7 @@ The metrics for each algorithm implementation is as follows.
 | Has Disease | 0.67      | 0.54   | 0.60     |
 
 #### 4.1.3 Gaussian Naive Bayes
+
 **Table 4.5:** dav_set metrics
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
@@ -179,6 +193,7 @@ The metrics for each algorithm implementation is as follows.
 | Has Disease | 0.72      | 0.28   | 0.40     |
 
 #### 4.1.4 Decision Trees
+
 **Table 4.7:** dav_set metrics
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
@@ -192,6 +207,7 @@ The metrics for each algorithm implementation is as follows.
 | Has Disease | 0.76      | 0.66   | 0.71     |
 
 #### 4.1.5 K-Means 
+
 **Table 4.7:** dav_set metrics
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
@@ -205,9 +221,11 @@ The metrics for each algorithm implementation is as follows.
 | Has Disease | 0.52      | 0.34   | 0.41     |
 
 #### 4.1.6 Mean-shift
+
 Algorithm is still being implemented
 
 #### 4.1.7 Spectral Clustering
+
  **Table 4.7:** dav_set metrics
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
@@ -220,6 +238,9 @@ Algorithm is still being implemented
 | No Disease  | 0.56      | 0.57   | 0.57     |
 | Has Disease | 0.56      | 0.56   | 0.56     |
 
+## 5. Conclusion
+
+be addressed as the project nears completion
 
 ## Project Timeline
 
