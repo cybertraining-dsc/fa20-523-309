@@ -10,9 +10,9 @@
 #
 ####
 
-# import sys
+import sys
 
-# sys.exit(1) 
+sys.exit(1) 
 
 # force the exit
 
