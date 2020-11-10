@@ -77,7 +77,7 @@ To close out this initial analysis is the correlation map of each of the feature
 
 **Figure 2.6**: sav_set correlation matrix.
 
-## 3. Machine Learning Algorithms
+## 3. Machine Learning Algorithms and Implementation
 
 With many machine learning algorithms already available and many more in development. Selecting the optimal one for an application can be a challenging balance since each algorithm has both its advantages and disadvantages. As mentioned in the introduction, we will explore applying the most common and established algorithms available to the public. 
 
@@ -128,6 +128,99 @@ This algorithm was chosen for its strength in dealing with uneven cluster sizes 
 #### 3.3.3 Spectral Clustering
 As an inverse, this algorithm was chosen for its strength with fewer uneven clusters [^10]. In comparison to Mean-shift, this maybe the better algorithm for this application. 
 
+## 4. Results & Discussion
+
+### 4.1 Algorithm Metrics
+The metrics used to determine the viability of each of the algorithms are precision, recall, and f1-score. These are simple metrics based on the values from a confusion matrix which is a visualization of the False and True Positives and Negatives. Precision is essentially how accurate was the algorithm in classifying each data point. This however, is not a good metric to solely base performance as precision does not account for imbalanced distributions within a dataset [^11]. 
+
+This is where the recall metric comes in which is defined as how many samples were accurately classified by the algorithm. This is a more versatile metric as it can compensate for imbalanced datasets. While it may not be in our case as seen in the dataset analysis where we have a relatively balanced ratio. It still gives great insight on the performance for our application.
+
+Finally is the f1-score which is the harmonic mean of the precision and recall metric [^11]. This will be the key metric we will mainly focus on as it strikes a good balance between the two more primitive metrics. Since one may think in medical applications one would want to maximize recall, it is at the cost of precision which ends up in more false predictions which is essentially an overfitting scenario [^11]. Something that reduces the viability of the model to the application especially since we have a relatively balanced dataset, more customized weighting is not as necessary.
+
+The metrics for each algorithm implementation is as follows.
+
+#### 4.1.1 Support Vector Machines
+**Table 4.1:** dav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.99      | 0.94   | 0.96     |
+| Has Disease | 0.95      | 0.99   | 0.97     |
+
+**Table 4.2:** sav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.99      | 0.94   | 0.96     |
+| Has Disease | 0.95      | 0.99   | 0.97     |
+
+#### 4.1.2 K-Nearest Neighbors
+**Table 4.3:** dav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.88      | 0.86   | 0.87     |
+| Has Disease | 0.87      | 0.90   | 0.88     |
+
+**Table 4.4:** sav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.62      | 0.74   | 0.67     |
+| Has Disease | 0.67      | 0.54   | 0.60     |
+
+#### 4.1.3 Gaussian Naive Bayes
+**Table 4.5:** dav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.88      | 0.81   | 0.84     |
+| Has Disease | 0.83      | 0.90   | 0.86     |
+
+**Table 4.6:** sav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.56      | 0.90   | 0.69     |
+| Has Disease | 0.72      | 0.28   | 0.40     |
+
+#### 4.1.4 Decision Trees
+**Table 4.7:** dav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.92      | 0.97   | 0.95     |
+| Has Disease | 0.97      | 0.93   | 0.95     |
+
+**Table 4.8:** sav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.71      | 0.80   | 0.75     |
+| Has Disease | 0.76      | 0.66   | 0.71     |
+
+#### 4.1.5 K-Means 
+**Table 4.7:** dav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.22      | 0.29   | 0.25     |
+| Has Disease | 0.12      | 0.09   | 0.10     |
+
+**Table 4.8:** sav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.51      | 0.69   | 0.59     |
+| Has Disease | 0.52      | 0.34   | 0.41     |
+
+#### 4.1.6 Mean-shift
+Algorithm is still being implemented
+
+#### 4.1.7 Spectral Clustering
+ **Table 4.7:** dav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.86      | 0.74   | 0.79     |
+| Has Disease | 0.79      | 0.89   | 0.84     |
+
+**Table 4.8:** sav_set metrics
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.56      | 0.57   | 0.57     |
+| Has Disease | 0.56      | 0.56   | 0.56     |
+
+
 ## Project Timeline
 
 The following is a plan for the rest of the semester, using the due dates for Assignments 8-11 as milestone dates.
@@ -161,6 +254,11 @@ The following is a plan for the rest of the semester, using the due dates for As
 - Start analysis of the various models and their viability.
     - Additional tuning of hyperparameters as necessary.
 - Update Report
+- Milestone Update
+    - Additional delays were encountered due to external classes.
+        - It is expected to have a surplus of time between this milestone and the deadline to catch up.
+    - All but one algorithm has been implemented.
+        - Some light tuning was conducted however, results did not significantly improve.
 
 ### November 16
 
@@ -187,3 +285,5 @@ The following is a plan for the rest of the semester, using the due dates for As
 [^9]: Scikit-learn.org. 2020. 1.10. Decision Trees — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/tree.html> [Accessed 27 October 2020].
 
 [^10]: Scikit-learn.org. 2020. 2.3. Clustering — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/clustering.html#clustering> [Accessed 27 October 2020].
+
+[^11]: Mianaee, S., 2020. 20 Popular Machine Learning Metrics. Part 1: Classification & Regression Evaluation Metrics. [online] Medium. Available at: <https://towardsdatascience.com/20-popular-machine-learning-metrics-part-1-classification-regression-evaluation-metrics-1ca3e282a2ce> [Accessed 10 November 2020].
