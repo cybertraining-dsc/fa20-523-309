@@ -4,6 +4,18 @@
 # markdown-check.py content/en/report/fa20-523-350/report/report.md
 # markdown-check.py content/en/report/fa20-523-312/project/project.md
 
+####
+#
+# THIS SCRIPT IS BROKEN AND MUST NOT BE USED
+#
+####
+
+# import sys
+
+# sys.exit(1) 
+
+# force the exit
+
 errors = 0
 wrong = False
 
