@@ -18,3 +18,4 @@ jobs:
     # Run the check program
     - name: Run Check
       run: python markdown-check.py project/project.md
+      # replace 'project/project.md' with 'report/report.md' if repo is a report.
