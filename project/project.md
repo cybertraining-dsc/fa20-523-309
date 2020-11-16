@@ -161,6 +161,7 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.99      | 0.94   | 0.96     |
 | Has Disease | 0.95      | 0.99   | 0.97     |
+| Training Time | 0.038 sec |        |          |
 
 **Table 4.2:** sav_set metrics
 
@@ -168,6 +169,7 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.99      | 0.94   | 0.96     |
 | Has Disease | 0.95      | 0.99   | 0.97     |
+| Training Time | 167.897 sec |        |          |
 
 #### 4.1.2 K-Nearest Neighbors
 
@@ -177,6 +179,7 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.88      | 0.86   | 0.87     |
 | Has Disease | 0.87      | 0.90   | 0.88     |
+| Training Time | 0.025 sec |        |          |
 
 **Table 4.4:** sav_set metrics
 
@@ -184,6 +187,7 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.62      | 0.74   | 0.67     |
 | Has Disease | 0.67      | 0.54   | 0.60     |
+| Training Time | 10.116 sec |        |          |
 
 #### 4.1.3 Gaussian Naive Bayes
 
@@ -193,6 +197,7 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.88      | 0.81   | 0.84     |
 | Has Disease | 0.83      | 0.90   | 0.86     |
+| Training Time | 0.011 sec |        |          |
 
 **Table 4.6:** sav_set metrics
 
@@ -200,6 +205,7 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.56      | 0.90   | 0.69     |
 | Has Disease | 0.72      | 0.28   | 0.40     |
+| Training Time | 0.057 sec |        |          |
 
 #### 4.1.4 Decision Trees
 
@@ -209,6 +215,7 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.92      | 0.97   | 0.95     |
 | Has Disease | 0.97      | 0.93   | 0.95     |
+| Training Time | 0.009 sec |        |          |
 
 **Table 4.8:** sav_set metrics
 
@@ -216,42 +223,65 @@ The metrics for each algorithm implementation is as follows.
 |-------------|-----------|--------|----------|
 | No Disease  | 0.71      | 0.80   | 0.75     |
 | Has Disease | 0.76      | 0.66   | 0.71     |
+| Training Time | 0.272 sec |        |          |
 
 #### 4.1.5 K-Means 
 
-**Table 4.7:** dav_set metrics
+**Table 4.9:** dav_set metrics
 
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
 | No Disease  | 0.22      | 0.29   | 0.25     |
 | Has Disease | 0.12      | 0.09   | 0.10     |
+| Training Time | 0.376 sec |        |          |
 
-**Table 4.8:** sav_set metrics
+**Table 4.10:** sav_set metrics
 
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
 | No Disease  | 0.51      | 0.69   | 0.59     |
 | Has Disease | 0.52      | 0.34   | 0.41     |
+| Training Time | 1.429 sec |        |          |
 
 #### 4.1.6 Mean-shift
 
-Algorithm is still being implemented
+**Table 4.11:** dav_set metrics
+
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.47      | 1.00   | 0.64     |
+| Has Disease | 0.00      | 0.00   | 0.00     |
+| Training Time | 0.461 sec |        |          |
+
+**Table 4.12:** sav_set metrics
+
+|             | Precision | Recall | f1-score |
+|-------------|-----------|--------|----------|
+| No Disease  | 0.50      | 1.00   | 0.67     |
+| Has Disease | 0.00      | 0.00   | 0.00     |
+| Training Time | 193.93 sec |        |          |
 
 #### 4.1.7 Spectral Clustering
 
-**Table 4.7:** dav_set metrics
+**Table 4.13:** dav_set metrics
 
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
 | No Disease  | 0.86      | 0.74   | 0.79     |
 | Has Disease | 0.79      | 0.89   | 0.84     |
+| Training Time | 0.628 sec |        |          |
 
-**Table 4.8:** sav_set metrics
+**Table 4.14:** sav_set metrics
 
 |             | Precision | Recall | f1-score |
 |-------------|-----------|--------|----------|
 | No Disease  | 0.56      | 0.57   | 0.57     |
 | Has Disease | 0.56      | 0.56   | 0.56     |
+| Training Time | 208.822 sec |        |          |
+
+### 4.2 Algorithm Discussion
+
+
 
 ## 5. Conclusion
 
