@@ -125,29 +125,29 @@ This algorithm was chosen to investigate another non-parametric method to determ
 
 ### 3.3 Clustering Algorithms
 
-The following algorithms were determined to be candidates for this project based on the table of clustering algorithms available on the Scikit-learn [^10]. 
+The following algorithms were determined to be candidates for this project based on the table of clustering algorithms available on the Scikit-learn [^5]. 
 
 #### 3.3.1 K-Means 
 
-The usecase for this algorithm is general purpose with even and low number of clusters [^10]. Of which the sav_set appears to have with the even distribution across most of the features.
+The usecase for this algorithm is general purpose with even and low number of clusters [^5]. Of which the sav_set appears to have with the even distribution across most of the features.
 
 #### 3.3.2 Mean-shift
 
-This algorithm was chosen for its strength in dealing with uneven cluster sizes and non-flat geometry [^10]. Though it is not easily scalable the application of our small dataset size might be of interest.
+This algorithm was chosen for its strength in dealing with uneven cluster sizes and non-flat geometry [^5]. Though it is not easily scalable the application of our small dataset size might be of interest.
 
 #### 3.3.3 Spectral Clustering
 
-As an inverse, this algorithm was chosen for its strength with fewer uneven clusters [^10]. In comparison to Mean-shift, this maybe the better algorithm for this application. 
+As an inverse, this algorithm was chosen for its strength with fewer uneven clusters [^5]. In comparison to Mean-shift, this maybe the better algorithm for this application. 
 
 ### 3.4 Implementation
 
-The implementation of these algorithms were done under the direction of the documentation page for each respective algorithm. The jupyter notebook used for this project is available at <https://github.com/cybertraining-dsc/fa20-523-309/blob/main/project/data_analysis/ml_algorithms.ipynb> with each algorithm having a corresponding cell. A benchmarking library is also included to determine the efficiency of each algorithm in processing time. One thing of note is the lack of functions used for the classification compared to the clustering algorithms. The justification for this discrepancy is due to inexperience in creating optimal implementations as well as determining that not being implemented in a function would not have a significant impact on performance.
+The implementation of these algorithms were done under the direction of the documentation page for each respective algorithm. The jupyter notebook used for this project is available at <https://github.com/cybertraining-dsc/fa20-523-309/blob/main/project/data_analysis/ml_algorithms.ipynb> with each algorithm having a corresponding cell. A benchmarking library is also included to determine the efficiency of each algorithm in processing time. One thing of note is the lack of functions used for the classification compared to the clustering algorithms. The justification for this discrepancy is due to inexperience in creating optimal implementations as well as determining that not being implemented in a function would not have a significant impact on performance. Additionally, graphs representing the test data were included to help visualize the performance of the clustering algorithms utilizing example code from the documentation [^14].
 
 #### 3.4.1 Dataset Preprocessing
 
-Pre-processing of the cleaned datasets for the classification algorithms was done under guidance of the scikit learn documentation [^14]. Overall, each algorithm was trained and tested with the same split for each run. While the split data could have been passed directly to the algorithms, they were normalized further using the built-in fit_transform function for the best results possible. 
+Pre-processing of the cleaned datasets for the classification algorithms was done under guidance of the scikit learn documentation [^10]. Overall, each algorithm was trained and tested with the same split for each run. While the split data could have been passed directly to the algorithms, they were normalized further using the built-in fit_transform function for the best results possible. 
 
-Pre-processing of the cleaned datasets for the clustering algorithms was done under guidance of the scikit learn documentation [^10]. Compared to the classification algorithms, a dimensionality reduction was conducted using Principal component analysis (PCA). This step condenses the multiple features into a 2 feature array which the clustering algorithms were optimized for, increasing the odds for the best results possible. Another note is the dataset split was conducted during execution of the algorithm. Upon further investigation, it was determined that this does not have an effect on the ending results as the randomization was disabled due to setting the same random_state parameter for each call.
+Pre-processing of the cleaned datasets for the clustering algorithms was done under guidance of the scikit learn documentation [^5]. Compared to the classification algorithms, a dimensionality reduction was conducted using Principal component analysis (PCA). This step condenses the multiple features into a 2 feature array which the clustering algorithms were optimized for, increasing the odds for the best results possible. Another note is the dataset split was conducted during execution of the algorithm. Upon further investigation, it was determined that this does not have an effect on the ending results as the randomization was disabled due to setting the same random_state parameter for each call.
 
 ## 4. Results & Discussion
 
@@ -287,9 +287,16 @@ The metrics for each algorithm implementation are as follows.
 | Has Disease | 0.56      | 0.56   | 0.56     |
 | Training Time | 208.822 sec |        |          |
 
-### 4.2 Algorithm Discussion
+### 4.2 Discussion
 
+In analyzing the resulting metrics in section 4.1, two major trends between the algorithms are apparent. 
 
+1. The classification algorithms perform significantly better than the clustering algorithms.
+2. Significant signs of overfitting for the dav_set.
+
+Addressing the first point, it is obvious from the metric performance where on average the classification algorithms were higher than the clustering algorithms. At a lower training time cost as well, which indicates that classification algorithms are well suited for this application than clustering. Especially when looking at the results for Mean-Shift in section 4.1.6 where the algorithm failed to identify any patient with a disease. This also illustrates the discussion on the metrics used to determine performance as the recall was 100% at the cost of missing every patient that would have required treatment. 
+
+Moving on to the next point, it can be seen that overfitting is occurring for the dav_set in comparing the performance to the sav_set for the same algorithm which can be seen in the corresponding tables in sections 4.1.2, 4.1.3, and 4.1.4. Here the performance gap is at least 20% between the two compared to what one would assume should be relatively close to each other. While this could also illustrate the affect the various features have on the algorithm, it was determined that this is most likely due to the small dataset size having a larger influence than anticipated.
 
 ## 5. Conclusion
 
@@ -316,7 +323,7 @@ be addressed as the project nears completion
 
 [^9]: Scikit-learn.org. 2020. 1.10. Decision Trees — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/tree.html> [Accessed 27 October 2020].
 
-[^10]: Scikit-learn.org. 2020. 2.3. Clustering — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/clustering.html#clustering> [Accessed 27 October 2020].
+[^10]: Scikit-learn.org. 2020. 6.3. Preprocessing Data — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing> [Accessed 17 November 2020].
 
 [^11]: Mianaee, S., 2020. 20 Popular Machine Learning Metrics. Part 1: Classification & Regression Evaluation Metrics. [online] Medium. Available at: <https://towardsdatascience.com/20-popular-machine-learning-metrics-part-1-classification-regression-evaluation-metrics-1ca3e282a2ce> [Accessed 10 November 2020].
 
@@ -324,4 +331,4 @@ be addressed as the project nears completion
 
 [^13]: Centers for Disease Control and Prevention. 2020. Heart Disease Facts | Cdc.Gov. [online] Available at: <https://www.cdc.gov/heartdisease/facts.htm> [Accessed 16 November 2020].
 
-[^14]: Scikit-learn.org. 2020. 6.3. Preprocessing Data — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing> [Accessed 17 November 2020].
+[^14]: Scikit-learn.org. 2020. A Demo Of K-Means Clustering On The Handwritten Digits Data — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html#sphx-glr-auto-examples-cluster-plot-kmeans-digits-py> [Accessed 17 November 2020].
