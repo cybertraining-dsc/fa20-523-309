@@ -235,6 +235,10 @@ The metrics for each algorithm implementation are as follows.
 
 #### 4.1.5 K-Means 
 
+**Figure 4.1:** dav_set algorithm visualization. The axis have no corresponding unit due to the PCA operation.
+
+![Figure 4.1](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/davkmeans.jpg)
+
 **Table 4.9:** dav_set metrics
 
 |             | Precision | Recall | f1-score |
@@ -242,6 +246,10 @@ The metrics for each algorithm implementation are as follows.
 | No Disease  | 0.22      | 0.29   | 0.25     |
 | Has Disease | 0.12      | 0.09   | 0.10     |
 | Training Time | 0.376 sec |        |          |
+
+**Figure 4.2:** sav_set algorithm visualization. The axis have no corresponding unit due to the PCA operation.
+
+![Figure 4.2](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/savkmeans.jpg)
 
 **Table 4.10:** sav_set metrics
 
@@ -253,6 +261,10 @@ The metrics for each algorithm implementation are as follows.
 
 #### 4.1.6 Mean-shift
 
+**Figure 4.3:** dav_set algorithm visualization. The axis have no corresponding unit due to the PCA operation.
+
+![Figure 4.3](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/davmeanshift.jpg)
+
 **Table 4.11:** dav_set metrics
 
 |             | Precision | Recall | f1-score |
@@ -260,6 +272,10 @@ The metrics for each algorithm implementation are as follows.
 | No Disease  | 0.47      | 1.00   | 0.64     |
 | Has Disease | 0.00      | 0.00   | 0.00     |
 | Training Time | 0.461 sec |        |          |
+
+**Figure 4.4:** sav_set algorithm visualization. The axis have no corresponding unit due to the PCA operation.
+
+![Figure 4.4](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/savmeanshift.jpg)
 
 **Table 4.12:** sav_set metrics
 
@@ -271,6 +287,10 @@ The metrics for each algorithm implementation are as follows.
 
 #### 4.1.7 Spectral Clustering
 
+**Figure 4.5:** dav_set algorithm visualization. The axis have no corresponding unit due to the PCA operation.
+
+![Figure 4.5](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/davspectral.jpg)
+
 **Table 4.13:** dav_set metrics
 
 |             | Precision | Recall | f1-score |
@@ -278,6 +298,10 @@ The metrics for each algorithm implementation are as follows.
 | No Disease  | 0.86      | 0.74   | 0.79     |
 | Has Disease | 0.79      | 0.89   | 0.84     |
 | Training Time | 0.628 sec |        |          |
+
+**Figure 4.6:** sav_set algorithm visualization. The axis have no corresponding unit due to the PCA operation.
+
+![Figure 4.6](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/savspectral.jpg)
 
 **Table 4.14:** sav_set metrics
 
@@ -294,14 +318,19 @@ In analyzing the resulting metrics in section 4.1, two major trends between the 
 1. The classification algorithms perform significantly better than the clustering algorithms.
 2. Significant signs of overfitting for the dav_set.
 
-Addressing the first point, it is obvious from the metric performance where on average the classification algorithms were higher than the clustering algorithms. At a lower training time cost as well, which indicates that classification algorithms are well suited for this application than clustering. Especially when looking at the results for Mean-Shift in section 4.1.6 where the algorithm failed to identify any patient with a disease. This also illustrates the discussion on the metrics used to determine performance as the recall was 100% at the cost of missing every patient that would have required treatment. 
+Addressing the first point, it is obvious from the metric performance where on average the classification algorithms were higher than the clustering algorithms. At a lower training time cost as well, which indicates that classification algorithms are well suited for this application than clustering. Especially when looking at the results for Mean-Shift in section 4.1.6 where the algorithm failed to identify any patient with a disease. This also illustrates the discussion on the metrics used to determine performance as the recall was 100% at the cost of missing every patient that would have required treatment illustrated by Figure 4.3 and 4.4. On this topic, comparing the actual data graphs for each of the clustering algorithms and comparing them to the example clustering figures within the scikit documentation, it solidifies that this is not the correct algorithm type for this dataset [^5].
 
 Moving on to the next point, it can be seen that overfitting is occurring for the dav_set in comparing the performance to the sav_set for the same algorithm which can be seen in the corresponding tables in sections 4.1.2, 4.1.3, and 4.1.4. Here the performance gap is at least 20% between the two compared to what one would assume should be relatively close to each other. While this could also illustrate the affect the various features have on the algorithm, it was determined that this is most likely due to the small dataset size having a larger influence than anticipated.
 
 ## 5. Conclusion
 
-be addressed as the project nears completion
+Reviewing these results, a clear conclusion cannot be accurately be determined due to the considerable amount of variables involved that were not able to be isolated to a desirable level. Namely the  compromises that were mentioned in section 2.1 and general dataset availability. However, it was determined that the main goal of this project was accomplished where the Support Vector Machine algorithm was narrowed down as a viable candidate for future work. Due in part to the overall f1-score performance for both datasets, providing confidence that overfitting may not occur. While there is a downside in scalability due to the significant increase in training time between the smaller dav_set and larger sav_set. This could indicate that further research should be focused on either improving this algorithm or creating a new one based on the underlying mechanism. 
 
+In relation to the types of features, it could be interpreted from this project that further efforts require a more expansive and modern dataset to perform to a level suitable for real world applications. As possible factors affecting the performance are in the accuracy and granularity of the measurements and factors available to learn from. This however, is seen to be a difficult challenge due to the nature of privacy laws on health data but, as proposed in the introduction. It would be very interesting to apply this project's findings on more general health data that is retrieved in annual visits.
+
+## 6. Acknowledgements
+
+The author would like to thank Dr. Gregor Von Laszewski, Dr. Geoffrey Fox, and the associate instructors in the *FA20-BL-ENGR-E534-11530: Big Data Applications* course (offered in the Fall 2020 semester at Indiana University, Bloomington) for their assistance and suggestions with regard to this project.
 
 ## References
 
