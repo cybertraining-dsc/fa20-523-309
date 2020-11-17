@@ -7,7 +7,7 @@ Ethan Nguyen, [fa20-523-309](https://github.com/cybertraining-dsc/fa20-523-309),
 {{% pageinfo %}}
 ## Abstract
 
-This section will be addressed as the project nears completion
+As cardiovascular diseases are the number 1 cause of death in the United States, the study of the factors and early detection and treatment could improve quality of life and lifespans. From investigating how the variety of factors related to cardiovascular health relate to a general trend, it has resulted in general guidelines to reduce the risk of experiencing a cardiovascular disease. However, this is a rudimentary way of preventative care that allows for those who do not fall into these risk categories to fall through. By applying machine learning, one could develop a flexible solution to actively monitor, find trends, and flag patients at risk to be treated immediately. Solving not only the risk categories but has the potential to be expanded to annual checkup data revolutionizing health care.  
 
 Contents
 
@@ -19,11 +19,9 @@ Contents
 
 ## 1. Introduction
 
-Since cardiovascular diseases are the number 1 cause of death globally, early prevention could help in extending one’s life span and possibly quality of life. Since there are cases where patients do not show any signs of cardiovascular trouble until an event occurs, having an algorithm predict from their medical history would help in picking up on early warning signs a physician may overlook. Or could also reveal additional risk factors and patterns for research on prevention and treatment.
+Since cardiovascular diseases are the number 1 cause of death in the United States, early prevention could help in extending one’s life span and possibly quality of life [^13]. Since there are cases where patients do not show any signs of cardiovascular trouble until an event occurs, having an algorithm predict from their medical history would help in picking up on early warning signs a physician may overlook. Or could also reveal additional risk factors and patterns for research on prevention and treatment. In turn this would be a great tool to apply in preventive care, which is the type of healthcare policy that focuses in diagnosing and preventing health issues that would otherwise require specialized treatment or is not treatable [^12]. This also has the potential to trickle down and increase the quality of life and lifespan of populations at a reduced cost as catching issues early most likely results in cheaper treatments [^12].
 
-This project will take a high-level overview of common, widely available classification algorithms and analyze their effectiveness for this specific use case. Notable ones include, Gaussian Naive Bayes, K-Nearest Neighbors, and Support Vector Machines.
-
-Additionally, two data sets that contain common features will be used to increase the training and test pool for evaluation. As well as to explore if additional feature types contribute to a better prediction. As it is known that a large set of data is required to reduce the possibility of the algorithm’s overfitting.
+This project will take a high-level overview of common, widely available classification algorithms and analyze their effectiveness for this specific use case. Notable ones include, Gaussian Naive Bayes, K-Nearest Neighbors, and Support Vector Machines. Additionally, two data sets that contain common features will be used to increase the training and test pool for evaluation. As well as to explore if additional feature types contribute to a better prediction. The goal of this project being a gateway to further research in data preprocessing, tuning, or development of specialized algorithms as well as further ideas on what data could be provided.
 
 ## 2. Datasets
 
@@ -141,6 +139,16 @@ This algorithm was chosen for its strength in dealing with uneven cluster sizes 
 
 As an inverse, this algorithm was chosen for its strength with fewer uneven clusters [^10]. In comparison to Mean-shift, this maybe the better algorithm for this application. 
 
+### 3.4 Implementation
+
+The implementation of these algorithms were done under the direction of the documentation page for each respective algorithm. The jupyter notebook used for this project is available at <https://github.com/cybertraining-dsc/fa20-523-309/blob/main/project/data_analysis/ml_algorithms.ipynb> with each algorithm having a corresponding cell. A benchmarking library is also included to determine the efficiency of each algorithm in processing time. One thing of note is the lack of functions used for the classification compared to the clustering algorithms. The justification for this discrepancy is due to inexperience in creating optimal implementations as well as determining that not being implemented in a function would not have a significant impact on performance.
+
+#### 3.4.1 Dataset Preprocessing
+
+Pre-processing of the cleaned datasets for the classification algorithms was done under guidance of the scikit learn documentation [^14]. Overall, each algorithm was trained and tested with the same split for each run. While the split data could have been passed directly to the algorithms, they were normalized further using the built-in fit_transform function for the best results possible. 
+
+Pre-processing of the cleaned datasets for the clustering algorithms was done under guidance of the scikit learn documentation [^10]. Compared to the classification algorithms, a dimensionality reduction was conducted using Principal component analysis (PCA). This step condenses the multiple features into a 2 feature array which the clustering algorithms were optimized for, increasing the odds for the best results possible. Another note is the dataset split was conducted during execution of the algorithm. Upon further investigation, it was determined that this does not have an effect on the ending results as the randomization was disabled due to setting the same random_state parameter for each call.
+
 ## 4. Results & Discussion
 
 ### 4.1 Algorithm Metrics
@@ -151,7 +159,7 @@ This is where the recall metric comes in which is defined as how many samples we
 
 Finally is the f1-score which is the harmonic mean of the precision and recall metric [^11]. This will be the key metric we will mainly focus on as it strikes a good balance between the two more primitive metrics. Since one may think in medical applications one would want to maximize recall, it is at the cost of precision which ends up in more false predictions which is essentially an overfitting scenario [^11]. Something that reduces the viability of the model to the application especially since we have a relatively balanced dataset, more customized weighting is not as necessary.
 
-The metrics for each algorithm implementation is as follows.
+The metrics for each algorithm implementation are as follows.
 
 #### 4.1.1 Support Vector Machines
 
@@ -287,48 +295,6 @@ The metrics for each algorithm implementation is as follows.
 
 be addressed as the project nears completion
 
-## Project Timeline
-
-The following is a plan for the rest of the semester, using the due dates for Assignments 8-11 as milestone dates.
-
-### October 26
-
-- Explore options on normalizing or conversion of the features to connect between the datasets and determine if they are viable to add to the project.
-    - A large portion of time was dedicated to researching this point. Unfortunately, nothing of note was discovered to realize this aspect of the plan. 
-- Explore ML models and frameworks and determine viability for the project.
-    - Additional information on the algorithms selected. Mainly the underlying calculation, theory, and disadvantages to compensate for has been added to the Nov 2nd milestone date.
-- Update Report.
-
-### November 2
-
-- Commence build out of ML models.
-    - Tuning of hyperparameters as necessary.
-- Update Report.
-- Milestone Update
-    - Delays were encountered due to external events.
-    - Underestimated the amount of time needed to building the ML models. 
-        - Task of adding additional information on algorithms selected has been pushed back further due to above.
-    - Initial implementations do not look very promising
-        - It is suspected that over fitting is occurring with the base line hyperparameters for the dav_set.
-        - Accuracy results for the sav_set are not as high as expected for the selected algorithms.
-        - Further investigation and experimentation is required to implement the clustering type algorithms. Suspect would need to look into dimensionality reduction in order to obtain better accuracy results.
-    - A general download function appears to not be possible. The website that hosts the datasets used requires an API key for script interactions that is unique to each user. 
-
-### November 9
-
-- ML Models should be complete.
-- Start analysis of the various models and their viability.
-    - Additional tuning of hyperparameters as necessary.
-- Update Report
-- Milestone Update
-    - Additional delays were encountered due to external classes.
-        - It is expected to have a surplus of time between this milestone and the deadline to catch up.
-    - All but one algorithm has been implemented.
-        - Some light tuning was conducted however, results did not significantly improve.
-
-### November 16
-
-- Finalize Report and findings.
 
 ## References
 
@@ -353,3 +319,9 @@ The following is a plan for the rest of the semester, using the due dates for As
 [^10]: Scikit-learn.org. 2020. 2.3. Clustering — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/clustering.html#clustering> [Accessed 27 October 2020].
 
 [^11]: Mianaee, S., 2020. 20 Popular Machine Learning Metrics. Part 1: Classification & Regression Evaluation Metrics. [online] Medium. Available at: <https://towardsdatascience.com/20-popular-machine-learning-metrics-part-1-classification-regression-evaluation-metrics-1ca3e282a2ce> [Accessed 10 November 2020].
+
+[^12]: Amadeo, K., 2020. Preventive Care: How It Lowers Healthcare Costs In America. [online] The Balance. Available at: <https://www.thebalance.com/preventive-care-how-it-lowers-aca-costs-3306074> [Accessed 16 November 2020].
+
+[^13]: Centers for Disease Control and Prevention. 2020. Heart Disease Facts | Cdc.Gov. [online] Available at: <https://www.cdc.gov/heartdisease/facts.htm> [Accessed 16 November 2020].
+
+[^14]: Scikit-learn.org. 2020. 6.3. Preprocessing Data — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/modules/preprocessing.html#preprocessing> [Accessed 17 November 2020].
