@@ -1,6 +1,8 @@
 # Analysis of Various Machine Learning Classification Techniques in Detecting Heart Disease
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-309/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-309/actions)
+[![Status](https://github.com/cybertraining-dsc/fa20-523-309/workflows/Status/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-309/actions)
+Status: in progress
 
 Ethan Nguyen, [fa20-523-309](https://github.com/cybertraining-dsc/fa20-523-309), [Edit](https://github.com/cybertraining-dsc/fa20-523-309/blob/main/project/project.md)
 
