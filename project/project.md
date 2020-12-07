@@ -2,7 +2,7 @@
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-309/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-309/actions)
 [![Status](https://github.com/cybertraining-dsc/fa20-523-309/workflows/Status/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-309/actions)
-Status: in progress
+Status: final
 
 Ethan Nguyen, [fa20-523-309](https://github.com/cybertraining-dsc/fa20-523-309), [Edit](https://github.com/cybertraining-dsc/fa20-523-309/blob/main/project/project.md)
 
@@ -161,7 +161,7 @@ This is where the recall metric comes in which is defined as how many samples we
 
 Finally is the f1-score which is the harmonic mean of the precision and recall metric [^11]. This will be the key metric we will mainly focus on as it strikes a good balance between the two more primitive metrics. Since one may think in medical applications one would want to maximize recall, it is at the cost of precision which ends up in more false predictions which is essentially an overfitting scenario [^11]. Something that reduces the viability of the model to the application especially since we have a relatively balanced dataset, more customized weighting is not as necessary.
 
-The metrics for each algorithm implementation are as follows.
+The metrics for each algorithm implementation are as follows. The training time metric is provided by the cloudmesh.common benchmark library [^15].
 
 #### 4.1.1 Support Vector Machines
 
@@ -313,7 +313,52 @@ The metrics for each algorithm implementation are as follows.
 | Has Disease | 0.56      | 0.56   | 0.56     |
 | Training Time | 208.822 sec |        |          |
 
-### 4.2 Discussion
+### 4.2 System Information
+
+Google Collab was used to train and evaluate the models selected. The specifications of the system in use is provided by the cloudmesh.common benchmark library and is listed in Table 4.15 [^15].
+
+**Table 4.15**: Training and Evaluation System Specifications
+
+| Attribute           | Value                                                            |
+|---------------------|------------------------------------------------------------------|
+| BUG_REPORT_URL      | "https://bugs.launchpad.net/ubuntu/"                             |
+| DISTRIB_CODENAME    | bionic                                                           |
+| DISTRIB_DESCRIPTION | "Ubuntu 18.04.5 LTS"                                             |
+| DISTRIB_ID          | Ubuntu                                                           |
+| DISTRIB_RELEASE     | 18.04                                                            |
+| HOME_URL            | "https://www.ubuntu.com/"                                        |
+| ID                  | ubuntu                                                           |
+| ID_LIKE             | debian                                                           |
+| NAME                | "Ubuntu"                                                         |
+| PRETTY_NAME         | "Ubuntu 18.04.5 LTS"                                             |
+| PRIVACY_POLICY_URL  | "https://www.ubuntu.com/legal/terms-and-policies/privacy-policy" |
+| SUPPORT_URL         | "https://help.ubuntu.com/"                                       |
+| UBUNTU_CODENAME     | bionic                                                           |
+| VERSION             | "18.04.5 LTS (Bionic Beaver)"                                    |
+| VERSION_CODENAME    | bionic                                                           |
+| VERSION_ID          | "18.04"                                                          |
+| cpu_count           | 2                                                                |
+| mem.active          | 698.5 MiB                                                        |
+| mem.available       | 11.9 GiB                                                         |
+| mem.free            | 9.2 GiB                                                          |
+| mem.inactive        | 2.6 GiB                                                          |
+| mem.percent         | 6.5 %                                                            |
+| mem.total           | 12.7 GiB                                                         |
+| mem.used            | 1.6 GiB                                                          |
+| platform.version    | #1 SMP Thu Jul 23 08:00:38 PDT 2020                              |
+| python              | 3.6.9 (default, Oct  8 2020, 12:12:24)  [GCC 8.4.0]              |
+| python.pip          | 19.3.1                                                           |
+| python.version      | 3.6.9                                                            |
+| sys.platform        | linux                                                            |
+| uname.machine       | x86_64                                                           |
+| uname.node          | bc15b46ebcf6                                                     |
+| uname.processor     | x86_64                                                           |
+| uname.release       | 4.19.112+                                                        |
+| uname.system        | Linux                                                            |
+| uname.version       | #1 SMP Thu Jul 23 08:00:38 PDT 2020                              |
+| user                | collab                                                           |
+
+### 4.3 Discussion
 
 In analyzing the resulting metrics in section 4.1, two major trends between the algorithms are apparent. 
 
@@ -363,3 +408,5 @@ The author would like to thank Dr. Gregor Von Laszewski, Dr. Geoffrey Fox, and t
 [^13]: Centers for Disease Control and Prevention. 2020. Heart Disease Facts | Cdc.Gov. [online] Available at: <https://www.cdc.gov/heartdisease/facts.htm> [Accessed 16 November 2020].
 
 [^14]: Scikit-learn.org. 2020. A Demo Of K-Means Clustering On The Handwritten Digits Data — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html#sphx-glr-auto-examples-cluster-plot-kmeans-digits-py> [Accessed 17 November 2020].
+
+[^15]: Gregor von Laszewski, Cloudmesh StopWatch and Benchmark from the Cloudmesh Common Library, https://github.com/cloudmesh/cloudmesh-common
