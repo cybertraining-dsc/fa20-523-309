@@ -9,7 +9,7 @@ Ethan Nguyen, [fa20-523-309](https://github.com/cybertraining-dsc/fa20-523-309),
 {{% pageinfo %}}
 ## Abstract
 
-As cardiovascular diseases are the number 1 cause of death in the United States, the study of the factors and early detection and treatment could improve quality of life and lifespans. From investigating how the variety of factors related to cardiovascular health relate to a general trend, it has resulted in general guidelines to reduce the risk of experiencing a cardiovascular disease. However, this is a rudimentary way of preventative care that allows for those who do not fall into these risk categories to fall through. By applying machine learning, one could develop a flexible solution to actively monitor, find trends, and flag patients at risk to be treated immediately. Solving not only the risk categories but has the potential to be expanded to annual checkup data revolutionizing health care.  
+As cardiovascular diseases are the number 1 cause of death in the United States, the study of the factors and early detection and treatment could improve quality of life and lifespans. From investigating how the variety of factors related to cardiovascular health relate to a general trend, it has resulted in general guidelines to reduce the risk of experiencing a cardiovascular disease. However, this is a rudimentary way of preventative care that allows for those who do not fall into these risk categories to fall through. By applying machine learning, one could develop a flexible solution to actively monitor, find trends, and flag patients at risk to be treated immediately. Solving not only the risk categories but has the potential to be expanded to annual checkup data revolutionizing health care.
 
 Contents
 
@@ -46,7 +46,7 @@ From this point on, the 1988 dataset will be referred to as `dav_set` and 2019 d
 
 To provide further insight on what to expect and how a model would be applied, the population of the datasets was analysed first. As depicted in Figure 2.1 the population samples of both datasets of gender vs age show the majority of the data is centered around 60 years of age with a growing slope from 30 onwards. 
 
-![Figure 2.1](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/agevssex.jpg)  
+![Figure 2.1](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/agevssex.jpg)
 
 **Figure 2.1**: Age vs Gender distributions of the dav_set and sav_set.
 
@@ -54,29 +54,29 @@ This trend appears to signify that the datasets focused solely on an older popul
 
 Moving on to Figure 2.2, we see an interesting trend with a significant growing trend in the sav_set in older population having more cardiovascular issues compared to the dav_set. While this cannot be seen in the dav_set. This may be caused by the additional life expectancy or a change in diet as noted in the introduction.
 
-![Figure 2.2](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/agevstarget.jpg)  
+![Figure 2.2](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/agevstarget.jpg)
 
 **Figure 2.2**: Age vs Target distributions of the dav_set and sav_set.
 
 In Figure 2.3, the probability of having cardiovascular issues between the sets are interesting. In the dav_set the inequality of higher probability could be attributed to the larger female samples in the dataset. With the sav_set having a more equal probability between the genders. 
 
-![Figure 2.3](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/gendervsprobability.jpg)  
+![Figure 2.3](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/gendervsprobability.jpg)
 
 **Figure 2.3**: Gender vs Probability of cardiovascular issues of the dav_set and sav_set.
 
 Finally, in Figure 2.4 is the probability vs cholesterol levels. This one is very interesting between the two datasets in terms of trend levels. With the dav_set having a higher risk at normal levels compared to the sav_set. This could be another hint of a societal change across the years or may in fact be due to the low sample size. Especially since the sav_set matches the general consensus of higher cholesterol levels increasing risk of cardiovascular issues [^1].
 
-![Figure 2.4](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/cholesterolvsprobability.jpg)  
+![Figure 2.4](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/cholesterolvsprobability.jpg)
 
 **Figure 2.4**: Cholesterol levels vs Probability of cardiovascular issues of the dav_set and sav_set.
 
 To close out this initial analysis is the correlation map of each of the features. From Figure 2.5 and 2.6 it can be concluded that both of these datasets are viable to conduct machine learning as the correlation factor is below the recommended value of 0.8 [^2]. Although we do see the signs of a low sample amount in the dav_set with a higher correlation factor compared to the sav_set.
 
-![Figure 2.5](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/davsetcorrelation.jpg)  
+![Figure 2.5](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/davsetcorrelation.jpg)
 
 **Figure 2.5**: dav_set correlation matrix.
 
-![Figure 2.6](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/savsetcorrelation.jpg)  
+![Figure 2.6](https://raw.githubusercontent.com/cybertraining-dsc/fa20-523-309/main/project/images/savsetcorrelation.jpg)
 
 **Figure 2.6**: sav_set correlation matrix.
 
@@ -381,7 +381,7 @@ The author would like to thank Dr. Gregor Von Laszewski, Dr. Geoffrey Fox, and t
 
 ## References
 
-[^1]: WebMD. 2020. Understanding Your Cholesterol Report. [online] Available at: <https://www.webmd.com/cholesterol-management/understanding-your-cholesterol-report> [Accessed 21 October 2020].  
+[^1]: WebMD. 2020. Understanding Your Cholesterol Report. [online] Available at: <https://www.webmd.com/cholesterol-management/understanding-your-cholesterol-report> [Accessed 21 October 2020].
 
 [^2]: R, V., 2020. Feature Selection — Correlation And P-Value. [online] Medium. Available at: <https://towardsdatascience.com/feature-selection-correlation-and-p-value-da8921bfb3cf> [Accessed 21 October 2020].
 
@@ -409,4 +409,4 @@ The author would like to thank Dr. Gregor Von Laszewski, Dr. Geoffrey Fox, and t
 
 [^14]: Scikit-learn.org. 2020. A Demo Of K-Means Clustering On The Handwritten Digits Data — Scikit-Learn 0.23.2 Documentation. [online] Available at: <https://scikit-learn.org/stable/auto_examples/cluster/plot_kmeans_digits.html#sphx-glr-auto-examples-cluster-plot-kmeans-digits-py> [Accessed 17 November 2020].
 
-[^15]: Gregor von Laszewski, Cloudmesh StopWatch and Benchmark from the Cloudmesh Common Library, https://github.com/cloudmesh/cloudmesh-common
+[^15]: Gregor von Laszewski, Cloudmesh StopWatch and Benchmark from the Cloudmesh Common Library, <https://github.com/cloudmesh/cloudmesh-common>
