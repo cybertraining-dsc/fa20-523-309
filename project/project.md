@@ -3,14 +3,13 @@ date: 2021-03-15
 title: Analysis of Various Machine Learning Classification Techniques in Detecting Heart Disease
 linkTitle: Heart Desease
 tags: ["project", "ai", "health"]
-description: Analysis of Various Machine Learning Classification Techniques in Detecting Heart Disease
+description: "As cardiovascular diseases are the number 1 cause of death in the United States, the study of the factors and early detection and treatment could improve quality of life and lifespans. From investigating how the variety of factors related to cardiovascular health relate to a general trend, it has resulted in general guidelines to reduce the risk of experiencing a cardiovascular disease. However, this is a rudimentary way of preventative care that allows for those who do not fall into these risk categories to fall through. By applying machine learning, one could develop a flexible solution to actively monitor, find trends, and flag patients at risk to be treated immediately. Solving not only the risk categories but has the potential to be expanded to annual checkup data revolutionizing health care."
 author: Ethan Nguyen
 resources:
 - src: "**.{png,jpg}"
   title: "Image #:counter"
 ---
 
-# 
 
 [![Check Report](https://github.com/cybertraining-dsc/fa20-523-309/workflows/Check%20Report/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-309/actions)
 [![Status](https://github.com/cybertraining-dsc/fa20-523-309/workflows/Status/badge.svg)](https://github.com/cybertraining-dsc/fa20-523-309/actions)
