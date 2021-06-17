@@ -5,6 +5,7 @@ linkTitle: Heart Desease
 tags: ["project", "ai", "health"]
 description: "As cardiovascular diseases are the number 1 cause of death in the United States, the study of the factors and early detection and treatment could improve quality of life and lifespans. From investigating how the variety of factors related to cardiovascular health relate to a general trend, it has resulted in general guidelines to reduce the risk of experiencing a cardiovascular disease. However, this is a rudimentary way of preventative care that allows for those who do not fall into these risk categories to fall through. By applying machine learning, one could develop a flexible solution to actively monitor, find trends, and flag patients at risk to be treated immediately. Solving not only the risk categories but has the potential to be expanded to annual checkup data revolutionizing health care."
 author: Ethan Nguyen
+github_url: https://github.com/cybertraining-dsc/fa20-523-309/edit/main/project/project.md
 resources:
 - src: "**.{png,jpg}"
   title: "Image #:counter"
